@@ -70,6 +70,10 @@ While loading into the ***"songplays"*** bulk loading is done using **COPY**. i.
 2. `etl.py` reads and processes files from `song_data` and `log_data` and loads them into tables. 
 3. `sql_queries.py`  contains all sql queries, and is imported into the above three files above.
 
+##### Jupyter Notebooks (.ipynb)
+1. `test.ipynb` - to check if tables is loaded with the data.
+2. `etl.ipynb` - Notebook to develop the ETL process for each of the tables before completing the `etl.py` file to load the whole datasets.
+3. `AnaliticalQueries.ipynb` - Notebook to run the analytical queries discussed below.
 
 ## Following are few Analytical queries that can be used on songs_table
 
