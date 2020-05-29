@@ -12,7 +12,7 @@ Metadata of the songs contains the details of both song and its artist, this dat
 
 file path: `data/song_data/A/B/C/TRABCEI128F424C983.json`
 
-####### TRABCEI128F424C983.json:
+sample JSON: TRABCEI128F424C983.json
 ```json
 {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0} 
 ```
@@ -21,7 +21,8 @@ User activity logs contains the details of user, timestamp and session details w
 
 ```rust,ignore
 data/log_data/2018/11/2018-11-12-events.json
-data/log_data/2018/11/2018-11-13-events.json```
+data/log_data/2018/11/2018-11-13-events.json
+```
 
 ##### Log Dataset JSON sample lines:
 
