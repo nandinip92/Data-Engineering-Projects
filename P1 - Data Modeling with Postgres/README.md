@@ -12,15 +12,16 @@ Metadata of the songs contains the details of both song and its artist, this dat
 
 file path: `data/song_data/A/B/C/TRABCEI128F424C983.json`
 
-TRABCEI128F424C983.json:
+####### TRABCEI128F424C983.json:
 ```json
 {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0} 
 ```
 
 User activity logs contains the details of user, timestamp and session details which are stored in ***"users"***, ***"time"*** and  ***songplays*** tables respectively. The log files in the dataset are partitioned by year and month. For example, here are filepaths to two files in this dataset.
 
-`data/log_data/2018/11/2018-11-12-events.json`
-`data/log_data/2018/11/2018-11-13-events.json`
+```rust,ignore
+data/log_data/2018/11/2018-11-12-events.json
+data/log_data/2018/11/2018-11-13-events.json```
 
 ##### Log Dataset JSON sample lines:
 
@@ -70,10 +71,12 @@ While loading into the ***"songplays"*** bulk loading is done using **COPY**. i.
 2. `etl.py` reads and processes files from `song_data` and `log_data` and loads them into tables. 
 3. `sql_queries.py`  contains all sql queries, and is imported into the above three files above.
 
-##### Jupyter Notebooks (.ipynb)
+#### Jupyter Notebooks (.ipynb)
 1. `test.ipynb` - to check if tables is loaded with the data.
 2. `etl.ipynb` - Notebook to develop the ETL process for each of the tables before completing the `etl.py` file to load the whole datasets.
 3. `AnaliticalQueries.ipynb` - Notebook to run the analytical queries discussed below.
+
+
 
 ## Following are few Analytical queries that can be used on songs_table
 
