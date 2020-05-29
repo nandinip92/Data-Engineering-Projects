@@ -10,7 +10,9 @@ Metadata of the songs contains the details of both song and its artist, this dat
 
 ##### songs metadata file paths and JSON sample:
 
-file path: `data/song_data/A/B/C/TRABCEI128F424C983.json`
+file path: ```rust,ignore
+			data/song_data/A/B/C/TRABCEI128F424C983.json
+			```
 
 sample JSON: TRABCEI128F424C983.json
 ```json
