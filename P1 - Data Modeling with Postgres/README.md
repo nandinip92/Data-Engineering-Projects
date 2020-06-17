@@ -1,6 +1,7 @@
 ## Data Modeling with Postgres and Building ETL pipeline for anaylising data for a Music Streaming App 
 
-Metadata of the songs and the user activity logs on the music app are stored in a directory of JSON files. This data is modeled for analysing and unserstanding what songs users are listening to. Like *most frequently played songs by the users, top Songs played on particular month/year, which artist songs are most played* etc. So, the focus is mainly on songs played by the users.
+A startup called Sparkify wants to analyze the data they've been collecting on songs and user activity on their new music streaming app. The analytics team is particularly interested in understanding what songs users are listening to. 
+Metadata of the songs and the user activity logs on the music app is stored in a directory of JSON files. This data is modeled for analysing and unserstanding what songs users are listening to. Like *most frequently played songs by the users, top Songs played on particular month/year, which artist songs are most played* etc. So, the focus is mainly on songs played by the users.
 
 - Database used is **Posetgres**
 - ETL is done by python sctipt
