@@ -63,7 +63,7 @@ Star schema is used to represent the ***"sparkifydb"***.
 
 #### ER diagram of sparkifydb
 
-<img src="Images/sparkifydb_Redshift.png" width="1000" height="600">
+<img src="Images/sparkifydb_Redshift.png" width="1000" height="400">
 
 
 #### - Description of the files used in this project
