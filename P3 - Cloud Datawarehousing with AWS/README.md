@@ -40,7 +40,7 @@ log_data/2018/11/2018-11-13-events.json
 ```
 And below is an example of what the data in a log file, 2018-11-12-events.json, looks like
 
-<img src="Images/log-data.png" width="1000" height="200">
+<img src="Images/log-data.png" width="700" height="200">
 
 
 ### Tables in the Schema
@@ -63,7 +63,7 @@ Star schema is used to represent the ***"sparkifydb"***.
 
 #### ER diagram of sparkifydb
 
-<img src="Images/sparkifydb_Redshift.png" width="1000" height="500">
+<img src="Images/sparkifydb_Redshift.png" width="1000" height="600">
 
 
 #### - Description of the files used in this project
