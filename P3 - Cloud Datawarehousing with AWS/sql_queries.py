@@ -142,7 +142,7 @@ songplay_table_insert = """ INSERT INTO songplays (start_time,
 						st_s.song_id,
 						st_s.artist_id,
 						st_e.sessionId,
-						st_s.artist_location,
+						st_e.location,
 						st_e.userAgent
 						FROM ST_songs st_s
 						RIGHT JOIN ST_events st_e ON
