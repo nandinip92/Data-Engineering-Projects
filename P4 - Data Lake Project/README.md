@@ -84,3 +84,7 @@ Type to command line:
 
 If running in local mode make sure `data`(extract the zip files) and scripts are in the same folder.
 Add your own paths and credentials in `dl.cfg` file
+
+
+## License
+My Udacity projects that I have made to improve my skills and complete my Data Engineering nanodegree. Please don't use it to copy the projects.
