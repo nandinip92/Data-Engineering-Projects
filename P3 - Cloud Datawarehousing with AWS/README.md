@@ -109,10 +109,11 @@ ETL processing is done using the python code, in which all JSON files in Songs d
 
 #### <span style="color:red"> NOTE : Edit `dwh.cfg` config before running scripts</span>
 Edit `dwh.cfg`  
-    * ***HOST***, is nothing but Endpoint provided in the Redshift management console. It looks like following:
-        + <span style= "color:orange">&lt;YOUR_CLUSTER_NAME&gt;.xxxxxxxxxxxx.&lt;YOUR_REGION&gt;.redshift.amazonaws.com</span>
-    * ***ARN***, is Amazon Resource Name can be found in your `IAM role`. It looks like following:
-         + <span style= "color:orange">arn:aws:iam::&lt;YOUR_ACCOUNT_ID&gt;:role/&lt;YOUR_ROLE_NAME&gt;</span>
+    * ***HOST***, is nothing but Endpoint provided in the Redshift management console. It looks like following:<br>
+      + <span style= "color:orange">&lt;YOUR_CLUSTER_NAME&gt;.xxxxxxxxxxxx.&lt;YOUR_REGION&gt;.redshift.amazonaws.com</span>
+      <br>    
+    * ***ARN***, is Amazon Resource Name can be found in your `IAM role`. It looks like following:<br>
+      + <span style= "color:orange">arn:aws:iam::&lt;YOUR_ACCOUNT_ID&gt;:role/&lt;YOUR_ROLE_NAME&gt;</span>
 
 #### ***Following are the steps for ccreating a Redshift cluster***</span>
 1. Create a new IAM user in your AWS account
@@ -122,10 +123,10 @@ Edit `dwh.cfg`
 5. Create a redshift cluster.
 
   ***Note:*** Edit the file `myAWS_Creds.cfg` in the same folder as this notebook and fill
-      <span style= "color:blue">
+      <p style= "color:blue">
         **[AWS]**<br>
         KEY= ***YOUR_AWS_KEY***<br>
         SECRET= ***YOUR_AWS_SECRET***
-        </span>
+        </p>
 
 Follow `CreatingRedshiftCluster.ipynb`- reference for creating ***Redshift Cluster***.
