@@ -109,13 +109,11 @@ ETL processing is done using the python code, in which all JSON files in Songs d
 
 #### <span style="color:red"> NOTE : Edit `dwh.cfg` config before running scripts</span>
 Edit `dwh.cfg`  
-    * ***HOST***, is nothing but Endpoint provided in the Redshift management console. It looks like following:
-    
-        + <span style= "color:orange">&lt;YOUR_CLUSTER_NAME&gt;.xxxxxxxxxxxx.&lt;YOUR_REGION&gt;.redshift.amazonaws.com</span><br>
-        
-    * ***ARN***, is Amazon Resource Name can be found in your `IAM role`. It looks like following:
-    
-         + <span style= "color:orange">arn:aws:iam::&lt;YOUR_ACCOUNT_ID&gt;:role/&lt;YOUR_ROLE_NAME&gt;</span>
+    * ***HOST***, is nothing but Endpoint provided in the Redshift management console. It looks like following:<br>
+      + <span style= "color:orange">&lt;YOUR_CLUSTER_NAME&gt;.xxxxxxxxxxxx.&lt;YOUR_REGION&gt;.redshift.amazonaws.com</span>
+      <br>    
+    * ***ARN***, is Amazon Resource Name can be found in your `IAM role`. It looks like following:<br>
+      + <span style= "color:orange">arn:aws:iam::&lt;YOUR_ACCOUNT_ID&gt;:role/&lt;YOUR_ROLE_NAME&gt;</span>
 
 #### ***Following are the steps for ccreating a Redshift cluster***</span>
 1. Create a new IAM user in your AWS account
