@@ -73,6 +73,45 @@ def process_song_data(spark, input_data, output_data):
     artists_table.write.mode("append").parquet(output_data + "artists/")
 
 
+def HandleUserLevelChanges(spark, log_data, dup_user_ids, output_data):
+    """
+    Function to get the latest data for the duplicate userIds
+        i.e, the data for the users who have updated  their level
+             from 'free' to 'paid' or vice-versa
+    """
+    # getting the latest timestamp for the users who have
+    dup_rec_latest_ts = (
+        log_data.select("userId", "ts")
+        .groupBy("userId")
+        .agg(max("ts").alias("max_ts"))
+        .where(col("userId").isin(dup_user_ids))
+    )
+
+    # Creating TempView tables
+    spark.catalog.dropTempView("latest_timestamp")
+    spark.catalog.dropTempView("log_data")
+
+    dup_rec_latest_ts.createTempView("latest_timestamp")
+    log_data.createTempView("log_data")
+
+    query = """SELECT log.userId as user_id,
+                        firstName as first_name,
+                        lastName as last_name,
+                        gender,
+                        level
+                        FROM log_data as log
+                        INNER JOIN latest_timestamp lt
+                            ON log.userId= lt.userId
+                            AND log.ts = lt.max_ts
+                        WHERE log.userId IN {};""".format(
+        tuple(dup_user_ids)
+    )
+    latest_recs_4_dups = spark.sql(query)
+
+    print("Loading latest data for Duplicate records.... ")
+    ## Writing latest  data for the users with changed levels
+    latest_recs_4_dups.write.mode("append").parquet(output_data + "users/")
+
 
 def process_log_data(spark, input_data, output_data):
     # get filepath to log data file
@@ -93,6 +132,24 @@ def process_log_data(spark, input_data, output_data):
         "gender",
         "level",
     ).dropDuplicates()
+
+    # Checking for the duplicate user records who have updated level from 'free' to 'paid' or vice-versa
+    dup_users = (
+        users_table.select(["user_id"])
+        .groupby("user_id")
+        .count()
+        .where(col("count") > 1)
+        .toPandas()
+    )
+    dup_user_ids = list(dup_users["user_id"])
+
+    if dup_user_ids:
+        print("Duplicate UserIDs whoose levels are changed", dup_user_ids)
+        ### Dropping the duplicate userIDs from users_table DataFrame
+        users_table = users_table.dropDuplicates(["user_id"])
+
+        ## Calling Function to get the latest data for the dropped users
+        HandleUserLevelChanges(spark, df, dup_user_ids, output_data)
 
     # writing users table (without duplicates) to parquet files
     users_table.printSchema()
