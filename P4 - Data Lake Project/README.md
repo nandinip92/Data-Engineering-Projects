@@ -45,3 +45,42 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 <img src="Images/log-data.png" width="700" height="200">
 
 
+### ETL Process
+* Songs and Logs data is read from the S3 bucket.
+* Records in log data associated with song plays i.e. records with page `NextSong`
+* Inserted only the latest data of the users who have upgraded their accounts from free to paid or vice-verse
+* Extracted data is processed and written to S3 bucket as Spark parquet files.
+* Processd data is loaded into respective folders of the tables.
+
+
+### Tables in the Schema
+All the data is written in the target  S3 bucket as parquet files format into 5 different tables.
+
+1. songplays - partitioned by `year` and `time`
+  - columns: `songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent`
+
+2. songs - partitioned by `year` and `artist_id`
+  - columns: `song_id, title, artist_id, year, duration`
+
+3. artists
+  - columns: `artist_id, name, location, lattitude, longitude`
+
+4. users
+  - columns: `user_id, first_name, last_name, gender, level`
+
+5. time - partitioned by `year` and `month`
+  - columns: `start_time, hour, day, week, month, year, weekday`
+
+
+#### - Description of the files used in this project
+1. `etl.py` reads data from S3, processes that data using Spark, and writes them back to S3
+2. `dl.cfg` template for AWS credentials and output S3 bucket path
+3. `data` contains the sample data for the songs and logs
+
+
+### How to use
+Type to command line:
+`python3 etl.py`
+
+If running in local mode make sure `data`(extract the zip files) and scripts are in the same folder.
+Add your own paths and credentials in `dl.cfg` file
