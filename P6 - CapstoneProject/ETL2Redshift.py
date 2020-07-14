@@ -210,12 +210,12 @@ def loading_us_demographics_table(spark,file):
                                           "CAST(`Female Population` AS INT) female_population",
                                           "CAST(`Total Population` AS INT) total_population",
                                          "CAST(`Number of Veterans` AS INT) as veterans_count",
-                                         "CAST(`Foreign-born` AS INT) foriegn_born",
+                                         "CAST(`Foreign-born` AS INT) foreign_born",
                                           "Race",
                                           "`State code` AS state_code"
                                          ])
     
-    cleansed_us_cities_df = df.na.fill(-999,["veterans_count","foriegn_born"])
+    cleansed_us_cities_df = df.na.fill(-999,["veterans_count","foreign_born"])
     write_to_redshift(spark, cleansed_us_cities_df,"US_CITY_DEMOGRAPHICS")
 
 
@@ -305,7 +305,7 @@ def main():
     airport_codes = config['S3']['AIRPOT_CODES']
 
 
-    #loading_I94_code_tables(spark,json_file)
+    loading_I94_code_tables(spark,json_file)
     loading_immgration_table(spark, sas_data)
     loading_us_demographics_table(spark,us_demographs)
     loading_airports_table(spark,airport_codes)
