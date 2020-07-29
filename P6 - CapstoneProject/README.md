@@ -45,8 +45,8 @@ The data Dictionary is provided in a separate file - `DataDictionary.md`
     Script that takes the _`I94_SAS_Label_Descriptors.SAS`_ and creates a **nested** json file - `I94_SAS_Label_Descriptors.json`. <br>
     Following is the JSON file structure created by script
 ```json
-  {
-   {
+{
+ {
       "I94CIT_I94RES" : [{"key": "102", "val": "ANDORRA"}, {"key": "324", "val": "ANGOLA"}, ......]
     },
     {
@@ -58,7 +58,7 @@ The data Dictionary is provided in a separate file - `DataDictionary.md`
     {
       "I94VISA": [{"key": "1", "val": "Business"}, {"key": "2", "val": "Pleasure"},...]
     }
-  }
+}
 ```
 **4. `LoadingDataFilesToS3.py`** - Script to load all datafiles onto S3 bucket. This script also invokes `LabelDescriptorToJson.py` uploads nested JSON file to S3. <br>
 **5. `ETL2Redshift.py`** - Processes and loads the data into Redshift tables.<br>
