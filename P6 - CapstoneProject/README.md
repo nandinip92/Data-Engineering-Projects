@@ -46,17 +46,22 @@ The data Dictionary is provided in a separate file - `DataDictionary.md`
     Following is the JSON file structure created by script
 ```json
 [
-    {"I94CIT_I94RES": [{"key": "582", "val": "MEXICO Air Sea, and Not Reported (I-94, no land arrivals)"}, 
+    {
+      "I94CIT_I94RES": [{"key": "582", "val": "MEXICO Air Sea, and Not Reported (I-94, no land arrivals)"}, 
                     {"key": "236", "val": "AFGHANISTAN"}, {"key": "101", "val": "ALBANIA"}, {"key": "316", "val": "ALGERIA"}, ......]
     },
     {
       "I94PORT": [{"key": "ALC", "val": "ALCAN, AK"}, {"key": "ANC", "val": "ANCHORAGE, AK"},... ]
     },
     {
-        "I94MODE": [{"key": "1", "val": "Air"}, {"key": "2", "val": "Sea"}, {"key": "3", "val": "Land"}, {"key": "9", "val": "Not reported"}]
+      "I94MODE": [{"key": "1", "val": "Air"}, {"key": "2", "val": "Sea"}, {"key": "3", "val": "Land"}, {"key": "9", "val": "Not reported"}]
     }, 
-    {"I94ADDR": [{"key": "AL", "val": "ALABAMA"}, {"key": "AK", "val": "ALASKA"}, {"key": "AZ", "val": "ARIZONA"}, {"key": "AR", "val": "ARKANSAS"}, ...]}, 
-    {"I94VISA": [{"key": "1", "val": "Business"}, {"key": "2", "val": "Pleasure"}, {"key": "3", "val": "Student"}]}
+    {
+      "I94ADDR": [{"key": "AL", "val": "ALABAMA"}, {"key": "AK", "val": "ALASKA"}, {"key": "AZ", "val": "ARIZONA"}, {"key": "AR", "val": "ARKANSAS"}, ...]
+    }, 
+    {
+      "I94VISA": [{"key": "1", "val": "Business"}, {"key": "2", "val": "Pleasure"}, {"key": "3", "val": "Student"}]
+    }
 ]
 ```
 **4. `LoadingDataFilesToS3.py`** - Script to load all datafiles onto S3 bucket. This script also invokes `LabelDescriptorToJson.py` uploads nested JSON file to S3. <br>
