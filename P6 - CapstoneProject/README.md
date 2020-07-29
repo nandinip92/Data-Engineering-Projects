@@ -45,8 +45,7 @@ The data Dictionary is provided in a separate file - `DataDictionary.md`
     Script that takes the _`I94_SAS_Label_Descriptors.SAS`_ and creates a **nested** json file - `I94_SAS_Label_Descriptors.json`. <br>
     Following is the JSON file structure created by script
 ```json
-{
- {
+{{
       "I94CIT_I94RES" : [{"key": "102", "val": "ANDORRA"}, {"key": "324", "val": "ANGOLA"}, ......]
     },
     {
