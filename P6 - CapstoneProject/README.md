@@ -2,7 +2,7 @@
 
 ## Scope
 
-The purpose of this project is to demonstrate various skiles associated to data engineering. There are four random datasets taken, by researching these datasets a conceptual data model is being created. Apacke Spark is being to read, Transform and Load the data into Redshift. While working with huge volumes of data spark processing speed is high and data manipulation and cleansing though data frames is very easy.
+The purpose of this project is to demonstrate various skills associated to data engineering. There are four random datasets taken, by researching these datasets a conceptual data model is being created. Apacke Spark is being to read, Transform and Load the data into Redshift. While working with huge volumes of data spark processing speed is high and data manipulation and cleansing though data frames is very easy.
 
 ## Datasets
 The following datasets are included in the project.
